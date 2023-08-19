@@ -4,44 +4,30 @@ import java.util.Scanner;
 public class Aula01 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[][] estoque = new int[4][5];
+        Scanner ler = new Scanner(System.in);
+        int[] num = new int [8];
+        for (int i = 0; i < 8 ; i++) {
+            System.out.println("Informe o valor no vetor " + i);
+            num[i] = ler.nextInt();
+            System.out.println(num[i]);
+        }
+        int countMaior30 = 0;
+        int somaMaior30 = 0;
+        int somaTotal = 0;
 
-        boolean encerrar = false;
+        for (int i = 0; i < 8; i++) {
+            somaTotal += num[i];
 
-        while (!encerrar) {
-            System.out.println("Digite o número do armário (0-4) e o número da prateleira (0-3):");
-            int armario = scanner.nextInt();
-            int prateleira = scanner.nextInt();
-
-            if (armario >= 0 && armario < 5 && prateleira >= 0 && prateleira < 4) {
-                if (estoque[prateleira][armario] < 10) {
-                    estoque[prateleira][armario]++;
-                    System.out.println("Caixa adicionada com sucesso!");
-                } else {
-                    System.out.println("Espaço insuficiente na prateleira.");
-                }
-            } else {
-                System.out.println("Armário ou prateleira inválidos.");
-            }
-
-            System.out.println("Deseja encerrar? (s/n)");
-            String resposta = scanner.next();
-            if (resposta.equalsIgnoreCase("s")) {
-                encerrar = true;
+            if (num[i] > 30) {
+                countMaior30++;
+                somaMaior30 += num[i];
             }
         }
 
-        // Mostrar a quantidade de caixas em cada prateleira/armário
-        System.out.println("Quantidade de caixas em cada prateleira/armário:");
-        for (int prateleira = 0; prateleira < 4; prateleira++) {
-            for (int armario = 0; armario < 5; armario++) {
-                System.out.print(estoque[prateleira][armario] + "\t");
-            }
-            System.out.println();
-        }
     }
+    public  class Ordenacao {
 
+    }
 }
 
 
