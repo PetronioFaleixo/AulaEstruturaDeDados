@@ -9,7 +9,6 @@ public class Aula02 {
         int[][] estoque = new int[4][5]; // Matriz de prateleiras por armários
 
         boolean encerrar = false;
-
         while (!encerrar) {
             System.out.println("Digite o número do armário (0-4) e o número da prateleira (0-3):");
             int armario = scanner.nextInt();
